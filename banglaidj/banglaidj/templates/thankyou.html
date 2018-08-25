@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h4> Welcome! {{ request.username }} Login Successfully!</h4>
+<a class="btn btn-default" href="{% url 'logout' %}">Log out</a>
+
+{% endblock %}

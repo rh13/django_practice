@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Divisions of Bangladesh</h2>
+<table class="table table-stripped">
+	<thead>
+	<tr> 
+		<th>Name</th>
+		<th>Population</th>
+		<th>Area</th>
+		
+	</tr></thead>
+	<tbody>
+    {% for div in divisions %}
+	<tr>
+		<td><a href="{% url 'dists_of_div' div.pk %}">{{ div.name }}</a></td>
+		<td>{{ div.population }}</td>
+		<td>{{ div.area }}</td>
+		 
+	</tr>	
+	{% endfor %}
+    </tbody>
+</table>
+{% endblock %}

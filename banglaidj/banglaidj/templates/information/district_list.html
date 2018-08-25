@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Divisions of Bangladesh</h2>
+<table class="table table-stripped">
+	<thead>
+	<tr> 
+		<th>Name</th>
+		<th>Division</th>
+		<th>Education rate</th>
+		<th>Population Density</th>
+		<th>Visited?</th>
+	</tr></thead>
+	<tbody>
+    {% for district in districts %}
+	<tr>
+		<td>{{ district.name }}</td>
+		<td>{{ district.division }}</td>
+		<td>{{ district.education_rate }}</td>
+		<td>{{ district.population_density }}</td>
+		<td>{{ district.visited }}</td>
+	</tr>	
+	{% endfor %}
+    </tbody>
+</table>
+{% endblock %}
