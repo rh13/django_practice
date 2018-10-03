@@ -29,8 +29,8 @@ def user_signup(request):
 	form = UserCreationForm()
 	if request.method == "POST": # jokhon post hobe tokhon ei kajgula hobe
 		form = UserCreationForm(request.POST) # form e je datagula chilo oigula eivaba nite hoy
-		if form.is_valid(): # erpor dekhte hobe datagula valid ki na  (jemon password match korche ki na, username onek sort ki na, emon habijabi)
-			form.save() # sob thik thakle save dite hobe, na hoile user create hobe na, login o korte parba na
-			return HttpResponseRedirect('/login') # eita je kono kichu hoite pare, ami just signup korle sign in page e niye jabe eita korchi. tumi oi page eo rakhte paro. ei line kono fact na
+		if form.is_valid(): # erpor dekhte hobe datagula valid ki na
+			form.save() # sob thik thakle save dite hobe
+			return HttpResponseRedirect('/login')
 
 	return render(request, 'signup.html',{'signup_form':form}) 
